@@ -91,7 +91,56 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vc2-ZI-l61" id="o59-0g-aGW">
                                             <rect key="frame" x="0.0" y="0.0" width="428" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EvS-xk-Zim">
+                                                    <rect key="frame" x="10" y="10" width="100" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="2LV-8C-IZz"/>
+                                                        <constraint firstAttribute="width" constant="100" id="qx3-eg-ncI"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rob-Xi-Un8">
+                                                    <rect key="frame" x="140" y="10" width="41.333333333333343" height="64"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kof-a7-Sc0">
+                                                            <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="33.666666666666664"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bn8-l4-T86">
+                                                            <rect key="frame" x="0.0" y="43.666666666666664" width="41.333333333333336" height="20.333333333333336"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="Bn8-l4-T86" secondAttribute="bottom" id="1NB-tp-zL2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Kof-a7-Sc0" secondAttribute="trailing" id="HcI-fb-XNN"/>
+                                                        <constraint firstItem="Bn8-l4-T86" firstAttribute="leading" secondItem="Rob-Xi-Un8" secondAttribute="leading" id="RPG-Ef-Rk7"/>
+                                                        <constraint firstItem="Kof-a7-Sc0" firstAttribute="top" secondItem="Rob-Xi-Un8" secondAttribute="top" id="Wad-nm-uuB"/>
+                                                        <constraint firstItem="Bn8-l4-T86" firstAttribute="top" secondItem="Kof-a7-Sc0" secondAttribute="bottom" constant="10" id="X1X-j0-cZF"/>
+                                                        <constraint firstItem="Kof-a7-Sc0" firstAttribute="leading" secondItem="Rob-Xi-Un8" secondAttribute="leading" id="oZW-yM-xA3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Bn8-l4-T86" secondAttribute="trailing" id="qVT-GS-F93"/>
+                                                        <constraint firstItem="Bn8-l4-T86" firstAttribute="top" secondItem="Kof-a7-Sc0" secondAttribute="bottom" constant="10" id="thJ-Bg-6xG"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="EvS-xk-Zim" secondAttribute="bottom" constant="10" id="1Zm-gx-vrn"/>
+                                                <constraint firstItem="Rob-Xi-Un8" firstAttribute="top" secondItem="o59-0g-aGW" secondAttribute="top" constant="10" id="ONb-pC-33U"/>
+                                                <constraint firstItem="EvS-xk-Zim" firstAttribute="top" secondItem="o59-0g-aGW" secondAttribute="top" constant="10" id="RvY-SO-CIE"/>
+                                                <constraint firstAttribute="bottom" secondItem="Rob-Xi-Un8" secondAttribute="bottom" constant="10" id="U7w-e2-nCp"/>
+                                                <constraint firstItem="EvS-xk-Zim" firstAttribute="leading" secondItem="o59-0g-aGW" secondAttribute="leading" constant="10" id="hNN-KO-pQk"/>
+                                                <constraint firstItem="Rob-Xi-Un8" firstAttribute="leading" secondItem="EvS-xk-Zim" secondAttribute="trailing" constant="30" id="rMS-Tp-umE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="animalDetail" destination="Bn8-l4-T86" id="md6-1D-e6f"/>
+                                            <outlet property="animalImageView" destination="EvS-xk-Zim" id="wSw-26-7p4"/>
+                                            <outlet property="animalName" destination="Kof-a7-Sc0" id="fV6-Wb-nrU"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -112,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="629" y="21"/>
+            <point key="canvasLocation" x="628.03738317757006" y="20.734341252699785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dgE-YF-SbJ">

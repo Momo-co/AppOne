@@ -34,12 +34,35 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
-        cell.textLabel?.text = " Animal \(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath) as! AnimalTableViewCell
+        
+        cell.animalImageView.image = UIImage(named: "Animal\(indexPath.row)")
+        cell.animalName.text = "Animal \(indexPath.row)"
+        
+        var nameOfAnimal:String = ""
+        
+        if indexPath.row == 0 {
+            nameOfAnimal = "tiger"
+        } else if indexPath.row == 1 {
+            nameOfAnimal = "crane"
+        } else if indexPath.row == 2 {
+            nameOfAnimal = "viper"
+        } else if indexPath.row == 3 {
+            nameOfAnimal = "monkey"
+        } else if indexPath.row == 4 {
+            nameOfAnimal = "mantis"
+        } else if indexPath.row == 5 {
+            nameOfAnimal = "panda"
+        } else {
+            nameOfAnimal = "panda"
+        }
+        
+        cell.animalDetail.text = "Animal details: This is a \(nameOfAnimal)"
+        
         return cell
     }
 }
