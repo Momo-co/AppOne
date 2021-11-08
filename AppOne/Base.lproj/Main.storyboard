@@ -157,11 +157,28 @@
                     <navigationItem key="navigationItem" id="pcW-1F-zp7"/>
                     <connections>
                         <outlet property="tableView" destination="pHP-ct-e3M" id="xKR-cd-5th"/>
+                        <segue destination="0ER-un-h9z" kind="show" id="JwO-o4-cSy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="628.03738317757006" y="20.734341252699785"/>
+        </scene>
+        <!--Display Animal View Controller-->
+        <scene sceneID="FOb-fm-Mfy">
+            <objects>
+                <viewController id="0ER-un-h9z" customClass="DisplayAnimalViewController" customModule="AppOne" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P6o-Ub-TCQ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6GU-SR-q2B"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1nc-dI-ii5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6U-jR-zSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1472" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dgE-YF-SbJ">
@@ -188,6 +205,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
