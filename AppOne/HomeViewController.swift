@@ -7,20 +7,10 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
-        cell.textLabel?.text = " Animal \(indexPath.row)"
-        return cell
-    }
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -40,4 +30,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     */
 
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalCell", for: indexPath)
+        cell.textLabel?.text = " Animal \(indexPath.row)"
+        return cell
+    }
 }
