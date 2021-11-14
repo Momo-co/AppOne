@@ -9,8 +9,18 @@ import UIKit
 
 class DisplayAnimalViewController: UIViewController {
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var descriptionLabel: UILabel!
+    var animal:Animal?
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image = UIImage(named: animal?.animalImage ?? "")
+        nameLabel.text = animal?.name
+        descriptionLabel.text = animal?.animalDescription
 
         // Do any additional setup after loading the view.
     }

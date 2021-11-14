@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController {
+class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var userName: UITextField!
     
@@ -17,6 +17,7 @@ class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userName.delegate = self
 
         // Do any additional setup after loading the view.
     }
@@ -38,5 +39,37 @@ class LogInViewController: UIViewController {
         } else {
             print("Please enter both your username and password")
         }
+    }
+}
+
+@objc protocol ruleB: AnyObject {
+    func getAge() -> Int
+    @objc optional func getName() -> Int
+}
+
+class A {
+    var name:String
+    weak var delegate:ruleB?
+    init(name:String, objectB:B){
+        self.name = name
+        self.delegate = objectB
+    }
+}
+
+class B {
+    var age:Int
+    var objectA:A?
+    init(age:Int){
+        self.age = age
+        objectA = A(name: "Andy", objectB: self)
+    }
+    func getAge() -> Int {
+        return age
+    }
+}
+
+extension B: ruleB {
+    func doSomething()  {
+        
     }
 }
