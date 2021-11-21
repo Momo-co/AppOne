@@ -15,26 +15,26 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var logInButton: UIButton!
     
+    var logInPresenter = LogInPresenter()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.delegate = self
-
+        
+        logInPresenter.logInDelegate = self
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func logInClick(_ sender: UIButton) {
-        if let _userName = userName.text, let _password  = password.text, _userName == "abc", _password == "123" {
+        logInPresenter.logIn(userNameLabelText: userName.text, passwordLabelText: password.text) { value in
+            self.logInToNextPage(isLogInSuccessful: value)
+        }
+    }
+    
+}
+extension LogInViewController: LogInProtocol {
+    func logInToNextPage(isLogInSuccessful: Bool) {
+        if isLogInSuccessful {
             performSegue(withIdentifier: "goToTableView", sender: nil)
         } else {
             print("Please enter both your username and password")
