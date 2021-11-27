@@ -18,7 +18,16 @@ class LogInPresenter {
         
         let logInOutcome = logInValidation(userName: userNameLabelText, password: passwordLabelText)
         logInClosure?(logInOutcome)
+        if logInOutcome {
+            saveLogInSession()
+        }
         //logInDelegate?.logInToNextPage(isLogInSuccessful: logInOutcome)
+    }
+    
+    func saveLogInSession() {
+        let userDefault = UserDefaults.standard
+        userDefault.set(true, forKey: "loginSuccess")
+        userDefault.synchronize()
     }
     
     func logInValidation(userName:String?, password:String?) -> Bool {

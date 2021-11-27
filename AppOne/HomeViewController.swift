@@ -26,7 +26,7 @@ class HomeViewController: UIViewController {
         let a2 = Animal(name: "Crane", animalDescription: "Animal Detail: This is a crane and they are fast at flying. BEWARE of their speed!", animalImage: "Animal1")
         let a3 = Animal(name: "Viper", animalDescription: "Animal Detail: This is a viper and their bite can be poisonous. BEWARE of their venom!", animalImage: "Animal2")
         let a4 = Animal(name: "Monkey", animalDescription: "Animal Detail: This is a monkey and they can be agile. BEWARE of pranks!", animalImage: "Animal3")
-        let a5 = Animal(name: "Mantis", animalDescription: "Animal Detail: This is a mantis and they are not easy to find. BEWARE of presence!", animalImage: "Animal4")
+        let a5 = Animal(name: "Mantis", animalDescription: "Animal Detail: This is a mantis and they are not easy to find. BEWARE of their presence!", animalImage: "Animal4")
         let a6 = Animal(name: "Panda", animalDescription: "Animal Detail: This is a panda and they are large. BEWARE of dangerous size!", animalImage: "Animal5")
         return [a1, a2, a3, a4, a5, a6]
     }
@@ -36,8 +36,24 @@ class HomeViewController: UIViewController {
         // displayAnimalViewController.animal = selectedAnimal
         displayAnimalViewController.animal = sender as? Animal
     }
-
+    
+    func parseConfig() -> Colour? {
+        if let url = Bundle.main.url(forResource: "Colours", withExtension: "plist") {
+            
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = PropertyListDecoder()
+                let colour = try decoder.decode(Colour.self, from: data)
+                return colour
+            } catch {
+                return nil
+            }
+                
+        }
+            return nil
+    }
 }
+        
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

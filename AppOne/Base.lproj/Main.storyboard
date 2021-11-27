@@ -11,7 +11,7 @@
         <!--Log In View Controller-->
         <scene sceneID="mcs-sq-1Rm">
             <objects>
-                <viewController id="TE6-5o-qYW" customClass="LogInViewController" customModule="AppOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogInViewController" id="TE6-5o-qYW" customClass="LogInViewController" customModule="AppOne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="epL-Dp-DQL">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AppOne" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnimalListViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="AppOne" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
