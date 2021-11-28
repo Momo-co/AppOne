@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 protocol LogInProtocol: AnyObject {
     func logInToNextPage(isLogInSuccessful: Bool)
@@ -19,6 +20,9 @@ class LogInPresenter {
         let logInOutcome = logInValidation(userName: userNameLabelText, password: passwordLabelText)
         logInClosure?(logInOutcome)
         if logInOutcome {
+            if let _userName = userNameLabelText {
+                saveUserName(userName: _userName)
+            }
             saveLogInSession()
         }
         //logInDelegate?.logInToNextPage(isLogInSuccessful: logInOutcome)
@@ -28,6 +32,10 @@ class LogInPresenter {
         let userDefault = UserDefaults.standard
         userDefault.set(true, forKey: "loginSuccess")
         userDefault.synchronize()
+    }
+    
+    func saveUserName(userName:String) {
+        KeychainWrapper.standard.set(userName, forKey: "userName")
     }
     
     func logInValidation(userName:String?, password:String?) -> Bool {

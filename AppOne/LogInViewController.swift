@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftKeychainWrapper
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
@@ -22,6 +23,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         userName.delegate = self
         
         logInPresenter.logInDelegate = self
+        
+        if let _userName = KeychainWrapper.standard.string(forKey: "userName") {
+            userName.text = _userName
+        }
         // Do any additional setup after loading the view.
     }
     
